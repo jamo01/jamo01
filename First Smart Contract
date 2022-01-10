@@ -1,0 +1,22 @@
+pragma solidity ^0.4.24; //declaring the version of solidity we want to use, specify a version greater than the one we ant to use ^
+
+contract MyContract { //declares the smart contract, named 'MyContract'
+    string value; //declares the data type of the variable we want to store, stores this value on the blockchain
+
+    //sets the value whenever its deployed
+    constructor() public{ //function is called whenever the smart contract is deployed to the blockchain
+            value = "myValue";
+    }
+
+    //allows us to read the value
+    function get() public view returns(string) { //creates a way to read the value 'get', 'public' sets the visbility of the value, anyone with access to the contract can see, return value set as a string data type, 'view' means we arent changing anything
+        return value;
+    }
+    //allows us to set the value
+    function set(string _value) public {//set will allow us to set this value, due it being public, anyone can set it.
+        value = _value; //_value is a local variable which can change the value being stored on the blockchain
+    }
+
+
+
+}
